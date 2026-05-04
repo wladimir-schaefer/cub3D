@@ -6,7 +6,7 @@
 /*   By: lsvelka <lsvelka@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 10:39:43 by lsvelka           #+#    #+#             */
-/*   Updated: 2026/05/04 10:41:05 by lsvelka          ###   ########.fr       */
+/*   Updated: 2026/05/04 10:48:13 by lsvelka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,4 @@ int main(int argc, char **argv)
         return (1);
     
     return (0);
-}
+} //test WHOOOOOOOOOOOOOOOOOOOOOOOO
