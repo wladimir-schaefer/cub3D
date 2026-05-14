@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 10:39:43 by lsvelka           #+#    #+#             */
-/*   Updated: 2026/05/14 17:09:20 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/06 12:30:07 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/17 21:42:09 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
+#include <stddef.h>
 
-t_map_info	*map_info;
-
-int main(int argc, char **argv)
+char	*ft_strchr(const char *s, int c)
 {
-	if(validate_input_file(argc, argv))
-		return (1);
-	get_map_info(map_info, argv[1]);
-	
-	
-
-	return (0);
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
-
-// t_config *load_config(char *filepath)
-// {
-	
-// }
+/*
+#include <stdio.h>
+int	main(void)
+{
+	const char *str = "Hello, World!";
+	int a = 87; // 'W'
+	printf("%s\n", ft_strchr(str, a));
+	int b = 0; // '\0'
+	printf("%s\n", ft_strchr(str, b));
+}
+*/

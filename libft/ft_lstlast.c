@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 10:39:43 by lsvelka           #+#    #+#             */
-/*   Updated: 2026/05/14 17:09:20 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/26 12:27:32 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/26 12:27:35 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
 
-t_map_info	*map_info;
-
-int main(int argc, char **argv)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if(validate_input_file(argc, argv))
-		return (1);
-	get_map_info(map_info, argv[1]);
-	
-	
-
-	return (0);
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
-
-// t_config *load_config(char *filepath)
-// {
-	
-// }

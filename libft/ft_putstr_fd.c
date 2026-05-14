@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 10:39:43 by lsvelka           #+#    #+#             */
-/*   Updated: 2026/05/14 17:09:20 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/22 11:22:59 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/22 11:23:04 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <unistd.h> 
 
-t_map_info	*map_info;
-
-int main(int argc, char **argv)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if(validate_input_file(argc, argv))
-		return (1);
-	get_map_info(map_info, argv[1]);
-	
-	
-
-	return (0);
+	if (!s)
+		return ;
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }
-
-// t_config *load_config(char *filepath)
-// {
-	
-// }
+/*
+int main(void)
+{
+	char *str = "abcdef";
+	ft_putstr_fd(str, 1);
+	return(0);
+}
+*/

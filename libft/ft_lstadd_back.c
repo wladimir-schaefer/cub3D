@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: wschafer <wschafer@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 10:39:43 by lsvelka           #+#    #+#             */
-/*   Updated: 2026/05/14 17:09:20 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/26 14:51:18 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/26 14:51:21 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
 
-t_map_info	*map_info;
-
-int main(int argc, char **argv)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if(validate_input_file(argc, argv))
-		return (1);
-	get_map_info(map_info, argv[1]);
-	
-	
+	t_list	*temp;
 
-	return (0);
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	temp = *lst;
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->next = new;
 }
-
-// t_config *load_config(char *filepath)
-// {
-	
-// }

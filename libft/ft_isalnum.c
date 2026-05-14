@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 10:39:43 by lsvelka           #+#    #+#             */
-/*   Updated: 2026/05/14 17:09:20 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/06 12:27:44 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/17 21:40:21 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
 
-t_map_info	*map_info;
-
-int main(int argc, char **argv)
+int	ft_isalnum(int c)
 {
-	if(validate_input_file(argc, argv))
-		return (1);
-	get_map_info(map_info, argv[1]);
-	
-	
-
-	return (0);
+	return (((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		|| (c >= '0' && c <= '9'));
 }
-
-// t_config *load_config(char *filepath)
-// {
-	
-// }

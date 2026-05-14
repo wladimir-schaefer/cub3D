@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 10:39:43 by lsvelka           #+#    #+#             */
-/*   Updated: 2026/05/14 17:09:20 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/06 12:29:46 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/17 21:42:02 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
+#include <stddef.h>
 
-t_map_info	*map_info;
-
-int main(int argc, char **argv)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	if(validate_input_file(argc, argv))
-		return (1);
-	get_map_info(map_info, argv[1]);
-	
-	
+	unsigned char	*p;
 
-	return (0);
+	p = s;
+	while (n--)
+		*p++ = (unsigned char)c;
+	return (s);
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	char str[] = "abc";
 
-// t_config *load_config(char *filepath)
-// {
-	
-// }
+	printf("%s\n", str);
+	ft_memset(str, 'X', 2);
+	printf("%s\n", str);
+}
+*/

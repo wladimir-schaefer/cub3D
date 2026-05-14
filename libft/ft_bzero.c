@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wschafer <wschafer@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 10:39:43 by lsvelka           #+#    #+#             */
-/*   Updated: 2026/05/14 17:09:20 by wschafer         ###   ########.fr       */
+/*   Created: 2025/05/06 12:26:51 by wschafer          #+#    #+#             */
+/*   Updated: 2025/05/17 21:39:59 by wschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
+#include <stddef.h>
 
-t_map_info	*map_info;
-
-int main(int argc, char **argv)
+void	ft_bzero(void *s, size_t n)
 {
-	if(validate_input_file(argc, argv))
-		return (1);
-	get_map_info(map_info, argv[1]);
-	
-	
+	unsigned char	*p;
 
-	return (0);
+	p = s;
+	while (n--)
+		*p++ = 0;
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	char str[] = "abc";
 
-// t_config *load_config(char *filepath)
-// {
-	
-// }
+	printf("%s\n", str);
+	ft_bzero(str, 3);
+	printf("%s\n", str);
+	for (int i = 0; i < 3; i++)
+		printf("str[%d] = %d\n", i, str[i]);
+}
+*/
